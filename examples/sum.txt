@@ -1,0 +1,32 @@
+00000000004005c0 <sum>:
+  4005c0:	d10043ff 	sub	sp, sp, #0x10
+  4005c4:	b9000fe0 	str	w0, [sp,#12]
+  4005c8:	b9000be1 	str	w1, [sp,#8]
+  4005cc:	b9400fe0 	ldr	w0, [sp,#12]
+  4005d0:	b9400be1 	ldr	w1, [sp,#8]
+  4005d4:	0b010000 	add	w0, w0, w1
+  4005d8:	b90007e0 	str	w0, [sp,#4]
+  4005dc:	b94007e0 	ldr	w0, [sp,#4]
+  4005e0:	910043ff 	add	sp, sp, #0x10
+  4005e4:	d65f03c0 	ret
+
+00000000004005e8 <main>:
+  4005e8:	a9bf7bfd 	stp	x29, x30, [sp,#-16]!
+  4005ec:	910003fd 	mov	x29, sp
+  4005f0:	d10043ff 	sub	sp, sp, #0x10
+  4005f4:	321e03e8 	orr	w8, wzr, #0x4
+  4005f8:	b81fc3bf 	stur	wzr, [x29,#-4]
+  4005fc:	2a0803e0 	mov	w0, w8
+  400600:	2a0803e1 	mov	w1, w8
+  400604:	97ffffef 	bl	4005c0 <sum>
+  400608:	b9000be0 	str	w0, [sp,#8]
+  40060c:	b9400be1 	ldr	w1, [sp,#8]
+  400610:	90000000 	adrp	x0, 400000 <_init-0x3f0>
+  400614:	911b2000 	add	x0, x0, #0x6c8
+  400618:	97ffff92 	bl	400460 <printf@plt>
+  40061c:	2a1f03e8 	mov	w8, wzr
+  400620:	b90007e0 	str	w0, [sp,#4]
+  400624:	2a0803e0 	mov	w0, w8
+  400628:	910003bf 	mov	sp, x29
+  40062c:	a8c17bfd 	ldp	x29, x30, [sp],#16
+  400630:	d65f03c0 	ret

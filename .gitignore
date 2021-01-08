@@ -1,0 +1,5 @@
+simulator
+test_parse
+test_instructions
+test_functions
+*.o
