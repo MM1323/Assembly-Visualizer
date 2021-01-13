@@ -1,0 +1,40 @@
+CORRECTNESS
+-------------------------------------------------------------------------
+PARSING
+ Instruction with register operands                         [PASS]   3/3
+ Instruction with constant operand                          [PASS]   2/2
+ Instruction with memory reference                          [PASS]   3/3
+ Instruction with offset memory reference                   [PASS]   2/2
+ Instruction with function                                  [PASS]   2/2
+SIMULATING INSTRUCTIONS
+ sub                                                        [PASS]   2/2
+ neg                                                        [PASS]   2/2
+ mul                                                        [PASS]   2/2
+ div                                                        [PASS]   1/1
+ lsl                                                        [PASS]   2/2
+ lsr                                                        [PASS]   1/1
+ and                                                        [PASS]   2/2
+ orr                                                        [PASS]   1/1
+ ldr                                                        [PASS]   2/2
+ str                                                        [PASS]   1/1
+ mov                                                        [PASS]   2/2
+SIMULATING COMPLEX INSTRUCTIONS
+ bl                                                         [PASS]   2/2
+ ret                                                        [PASS]   2/2
+ str store-only                                             [PASS]   2/2
+ str update-then-store                                      [PASS]   2/2
+ str store-then-update                                      [PASS]   2/2
+ ldp update-then-load                                       [PASS]   1/1
+ ldp load-then-update                                       [PASS]   1/1
+-------------------------------------------------------------------------
+                                           CORRECTNESS TOTAL        42/42
+
+STYLE
+-------------------------------------------------------------------------
+ Code compiles without warnings                             [PASS]   3/3
+ Contains comments                                          [PASS]   3/3
+ Multiple commits to git repo                               [PASS]   2/2
+-------------------------------------------------------------------------
+                                                 STYLE TOTAL        8/8
+
+                                                       TOTAL        50/50
